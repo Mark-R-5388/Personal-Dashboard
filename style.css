@@ -12,6 +12,7 @@ a:hover {
 }
 
 body {
+  color: #fff;
   margin: 0;
   padding: 0;
   background: no-repeat center center fixed;
@@ -19,16 +20,51 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  text-shadow: 0px 0px 20px #aaaaaa;
 }
-
+#main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.row-1 {
+  height: 25%;
+  display: flex;
+  justify-content: space-between;
+}
+.row-2 {
+  height: 25%;
+  display: flex;
+  justify-content: center;
+}
+.row-3 {
+  height: 25%;
+  display: flex;
+  align-items: flex-end;
+}
+.author-container,
+.crypto-container,
+.weather-container {
+  padding: 1em;
+}
+.author-container,
+.crypto-container {
+  margin-left: 0.5em;
+}
+.weather-container,
+.crypto-container {
+  margin-top: 0.5em;
+}
+.weather-container {
+  margin-right: 0.5em;
+}
 .author-container {
-  background-color: rgba(0, 0, 0, 0.637);
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  font-weight: 400;
   color: #fff;
-  padding: 0.5em;
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  border: 1px solid black;
+  margin-bottom: 0.5em;
   display: flex;
   flex-direction: column;
 }
