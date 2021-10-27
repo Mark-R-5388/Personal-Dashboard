@@ -44,16 +44,16 @@ body {
   align-items: flex-end;
 }
 .author-container,
-.crypto-container,
+.crypto,
 .weather-container {
   padding: 1em;
 }
 .author-container,
-.crypto-container {
+.crypto {
   margin-left: 0.5em;
 }
 .weather-container,
-.crypto-container {
+.crypto {
   margin-top: 0.5em;
 }
 .weather-container {
@@ -67,4 +67,14 @@ body {
   margin-bottom: 0.5em;
   display: flex;
   flex-direction: column;
+}
+.crypto-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.25em;
+  font-size: 1.5rem;
+}
+.crypto-info img {
+  margin-right: 0.5em;
 }

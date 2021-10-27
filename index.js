@@ -1,3 +1,4 @@
+// Background Image
 fetch(
   "https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature"
 )
@@ -26,3 +27,31 @@ fetch(
       "author-social"
     ).innerHTML = `<a href="https://www.mixcloud.com/V2OSK/">https://www.mixcloud.com/V2OSK/</a>`;
   });
+
+// Crypto
+let baseUrl = "https://api.coingecko.com/api/v3/coins";
+let cryptoList = ["bitcoin", "dogecoin", "ethereum", "litecoin"];
+let crypto = document.querySelector(".crypto");
+
+cryptoList.forEach((coin) => {
+  fetch(baseUrl + `/${coin}`)
+    .then((res) => {
+      if (!res.ok) {
+        throw Error("somehing went wrong");
+      }
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data);
+      crypto.innerHTML =
+        crypto.innerHTML +
+        `
+        <div class="crypto-info">
+    <img src=${data.image.small} />
+    <span>${data.name} Current $${data.market_data.current_price.usd}</span>
+    </div>
+    `;
+    })
+
+    .catch((err) => console.log(err));
+});
