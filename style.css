@@ -63,9 +63,20 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   letter-spacing: 0.7px;
   font-size: 1.1rem;
+}
+.weather-area {
+  margin-top: 0;
+}
+.weather-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.weather-header img {
+  width: 60%;
 }
 .author-container {
   font-size: 1.25rem;

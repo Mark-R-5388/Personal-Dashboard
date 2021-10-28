@@ -80,15 +80,17 @@ function getLocation() {
     )
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         let area = data.name;
-        let todayHigh = data.main.temp_max;
-        let todayLow = data.main.temp_min;
+        let forecast = data.weather[0].description;
+        let temp = Math.floor(data.main.temp);
         weatherContainer.innerHTML = `
         <div class="weather-info">
-          <h2>${area}</h2>
-          <p>Today's High: ${todayHigh}</p>
-          <p>Today's Low: ${todayLow}</p>
-
+        <div class='weather-header'>
+        <img src='http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png' />
+        <h2>${temp}</h2>
+        </div>
+        <h2 class="weather-area">${area}</h2>
         </div>
         `;
       })
