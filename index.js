@@ -67,3 +67,32 @@ function findDate() {
 }
 
 setInterval(findDate, 1000);
+
+// weather api
+let weatherContainer = document.querySelector(".weather-container");
+function getLocation() {
+  navigator.geolocation.getCurrentPosition((position) => {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+
+    fetch(
+      `https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        let area = data.name;
+        let todayHigh = data.main.temp_max;
+        let todayLow = data.main.temp_min;
+        weatherContainer.innerHTML = `
+        <div class="weather-info">
+          <h2>${area}</h2>
+          <p>Today's High: ${todayHigh}</p>
+          <p>Today's Low: ${todayLow}</p>
+
+        </div>
+        `;
+      })
+      .catch((err) => console.log(err));
+  });
+}
+getLocation();
