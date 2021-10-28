@@ -30,7 +30,7 @@ fetch(
 
 // Crypto
 let baseUrl = "https://api.coingecko.com/api/v3/coins";
-let cryptoList = ["bitcoin", "dogecoin", "ethereum", "litecoin"];
+let cryptoList = ["bitcoin", "dogecoin"];
 let crypto = document.querySelector(".crypto");
 
 cryptoList.forEach((coin) => {
@@ -42,7 +42,6 @@ cryptoList.forEach((coin) => {
       return res.json();
     })
     .then((data) => {
-      console.log(data);
       crypto.innerHTML =
         crypto.innerHTML +
         `
@@ -55,3 +54,16 @@ cryptoList.forEach((coin) => {
 
     .catch((err) => console.log(err));
 });
+
+// current time
+let timeContainer = document.querySelector(".time-container");
+
+function findDate() {
+  let currentDate = new Date();
+  let timeString = currentDate.toLocaleTimeString("en-us", {
+    timeStyle: "medium",
+  });
+  timeContainer.innerHTML = `<h1>${timeString}</h1>`;
+}
+
+setInterval(findDate, 1000);
