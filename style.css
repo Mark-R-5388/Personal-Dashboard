@@ -10,8 +10,20 @@ a:hover {
   cursor: pointer;
   color: rgb(84, 108, 243);
 }
-
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+p {
+  font-size: 2rem;
+}
+span {
+  font-size: 2rem;
+}
 body {
+  font-family: "Zen Antique Soft", serif;
   color: #fff;
   margin: 0;
   padding: 0;

@@ -80,9 +80,7 @@ function getLocation() {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         let area = data.name;
-        let forecast = data.weather[0].description;
         let temp = Math.floor(data.main.temp);
         weatherContainer.innerHTML = `
         <div class="weather-info">
@@ -90,7 +88,7 @@ function getLocation() {
         <img src='http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png' />
         <h2>${temp}</h2>
         </div>
-        <h2 class="weather-area">${area}</h2>
+        <h1 class="weather-area">${area}</h1>
         </div>
         `;
       })
